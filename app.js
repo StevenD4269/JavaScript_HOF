@@ -104,7 +104,23 @@ console.log(filteredUsers);
 // Exercise 5 Section
 console.log("EXERCISE 5:\n==========\n");
 // The sort method pulls items out of the "bucket" and sorts them according to a paramater you set
-users.sort((a, b) => b.score - a.score);
+// Sort will change the array directly
+// "a" and "b" are kind of telling it to take two items and compare them and sort them appropriately
+// LONG way
+// users.sort((a, b) => {
+//   if (a.score > b.score) {
+//     return -1;
+//   } else if (a.score < b.score) {
+//     return 1;
+//   } else {
+//     return 0;
+//   }
+// });
+
+users.sort((a, b) => {
+  return b.score - a, score;
+});
+// the sort method is going "is this a positive number, negative numbner, or zero" and sort them
 console.log(users);
 
 // Exercise 6 Section
@@ -114,7 +130,11 @@ console.log("EXERCISE 6:\n==========\n");
 // the basic template is:
 // array.reduce((accumulator, currentValue, currentIndex, array) => {logic to accumulate the value}, initialValue);
 
-const reducedValue = users.reduce((accumulator, currentValue, index) => {
-  console.log(index, accumulator, currentValue.score);
-  return accumulator + currentValue.score;
+const totalScore = users.reduce((accumulator, user) => {
+  return accumulator + user.score;
 }, 0);
+
+const averageScore = totalScore / users.length;
+
+console.log('Total Score:', totalScore); 
+console.log('Average Score:', averageScore); 
