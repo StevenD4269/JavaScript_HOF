@@ -138,3 +138,6 @@ const averageScore = totalScore / users.length;
 
 console.log('Total Score:', totalScore); 
 console.log('Average Score:', averageScore); 
+
+
+// jsjhsh
